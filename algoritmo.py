@@ -15,4 +15,7 @@ matriz = np.array([[-3,-3,2,-3,3,-2,-2,1,2,0,2,0,1],
                     [1,-3,1,0,1,2,3,1,-2,3,3,0,3]
                    
                    ])
-print(matriz)
+for i in range(len(matriz)):
+    for j in range(len(matriz[i])):
+        if matriz[i][j] =='I':
+            print(f'Letra "i" encontrada en la posición ({i}, {j})')
