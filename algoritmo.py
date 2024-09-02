@@ -1,17 +1,26 @@
-import numpy as np
-
-matriz = np.array([[-3,-3,2,-3,3,-2,-2,1,2,0,2,0,1],
-                   [2,3,'I',-1,-1,3,2,0,-3,-3,2,2,1],
-                   [1,-3,-3,2,3,1,3,3,2,1,-2,-2,3],
-                   [0,0,3,0,3,-3,-2,-3,0,2,2,1,1],
-                   [2,-1,-1,-3,3,3,0,-3,1,-2,2,0,1],
-                   [0,3,-1,1,-1,-2,2,-2,2,-1,-2,-3,0],
-                    [0,3,2,0,1,1,2,3,-1,-3,0,0,-2],
-                    [3,3,-3,-2,3,-3,-1,-3,3,-2,2,-2,-1],
-                    [-2,-2,1,0,-1,0,3,0,0,-2,2,-3,-1],
-                    [-3,3,0,-1,-3,1,2,-3,2,-3,0,2,-2],
-                    [-3,-3,-3,3,-2,0,-2,-3,1,0,1,-1,-2],
-                    [-1,0,1,2,1,0,'F',0,-3,3,3,-2,-1],
-                    [1,-3,1,0,1,2,3,1,-2,3,3,0,3]
-                   
+m = ([[-1,2,3],
+       ['I',1,-3],
+       [-1,-2,'F']
                    ])
+
+matriz = m.copy()
+filas = len(matriz)
+columnas = len(matriz)
+caminoCorto = None
+caminoLargo = None
+coordenadaLarga = []
+coordenadaCOrta = []
+
+
+def encontrar_coordenadas(valor):
+    for y in range(filas):
+         for x in range(columnas):
+              if matriz[y][x] == valor:
+                   return (y,x)
+
+inicio = encontrar_coordenadas('I')
+fin = encontrar_coordenadas('F')
+
+def buscar_camino(y,x):
+     if (y,x) == fin:
+          
